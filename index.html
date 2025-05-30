@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Padella 3D - Seleziona Vernice</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+ .logo-container {
+  position: sticky;
+  top: 0;
+  background-color: #111;
+  z-index: 10;
+  padding: 20px 60px;
+}
+
+.logo {
+  max-width: 300px;
+  width: 80%;
+  height: auto;
+}
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 0 20px;
+      flex-direction: row-reverse; /* 👈 padella a destra */
+    }
+
+    model-viewer {
+      width: 100%;
+      max-width: 1400px;
+      height: 75vh;
+      background-color: #3e3e3e;
+      flex: 1 1 60%;
+    }
+
+    .texture-info {
+      flex: 1 1 35%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .texture-preview {
+      width: 100%;
+      max-width: 650px;
+      border: 3px solid white;
+    }
+
+    .description {
+      text-align: center;
+      max-width: 650px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 30px 20px;
+    }
+
+    .texture-option {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px; /* angoli arrotondati */
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.3s ease, border 0.2s ease;
+    }
+
+    .texture-option:hover {
+  transform: scale(1.1);
+  border: 2px solid white;
+}
+
+    .texture-option.selected {
+      border: 6px solid white !important;
+    }
+
+.nota-in-sviluppo {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px; 
+  text-transform: uppercase;
+}
+
+
+  .note-effetto-visivo {
+  color: red;
+  font-weight: bold;
+  font-size: 4em;
+  text-align: center;
+  margin-top: 300px; 
+  text-transform: uppercase;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="logo-container">
+  <img src="logo_title.png" alt="Logo Padella" class="logo">
+</div>
+
+  <div class="container">
+    <model-viewer
+  id="viewer"
+  src="models/padella1.glb"
+  alt="Padella 3D"
+  auto-rotate
+  camera-controls
+  environment-image="neutral"
+  exposure="3"
+  shadow-intensity="0.8"
+  tone-mapping="neutral"
+  camera-orbit="0deg 80deg 85m"
+  min-camera-orbit="auto 75deg auto"
+  max-camera-orbit="auto 100deg auto">
+</model-viewer>
+
+    <div class="texture-info">
+      <img id="preview" class="texture-preview" src="texture/texture1.png" alt="Anteprima texture">
+      <div class="description">
+        <h2 id="texture-title">5300906</h2>
+        <p id="texture-desc"> </p>
+      </div>
+
+      
+      <div class="note-effetto-visivo">JUST VISUAL EFFECT</div>
+      <div class ="nota-in-sviluppo">UNDER DEVELOPMENT - NOT FINAL MODELS</div>
+      
+
+    </div>
+  </div>
+
+  <div class="grid">
+    <img src="texture/texture1.png" class="texture-option selected" onclick="setModel(this, 'models/padella1.glb', 'texture/texture1.png', '5300906', ' ')">
+    <img src="texture/texture2.png" class="texture-option" onclick="setModel(this, 'models/padella2.glb', 'texture/texture2.png', '5360127C', ' ')">
+    <img src="texture/texture3.png" class="texture-option" onclick="setModel(this, 'models/padella3.glb', 'texture/texture3.png', '5360127C', ' ')">
+    <img src="texture/texture4.png" class="texture-option" onclick="setModel(this, 'models/padella4.glb', 'texture/texture4.png', 'M390', ' ')">
+    <img src="texture/texture5.png" class="texture-option" onclick="setModel(this, 'models/padella5.glb', 'texture/texture5.png', '53009903', ' ')">
+    <img src="texture/texture6.png" class="texture-option" onclick="setModel(this, 'models/padella6.glb', 'texture/texture6.png', '5300807C', ' ')">
+    <img src="texture/texture7.png" class="texture-option" onclick="setModel(this, 'models/padella7.glb', 'texture/texture7.png', 'M226', ' ')">
+    <img src="texture/texture8.png" class="texture-option" onclick="setModel(this, 'models/padella8.glb', 'texture/texture8.png', '57302925', ' ')">
+    <img src="texture/texture9.png" class="texture-option" onclick="setModel(this, 'models/padella9.glb', 'texture/texture9.png', 'A127', ' ')">
+    <img src="texture/texture10.png" class="texture-option" onclick="setModel(this, 'models/padella10.glb', 'texture/texture10.png', 'M264', ' ')">
+    <img src="texture/texture11.png" class="texture-option" onclick="setModel(this, 'models/padella11.glb', 'texture/texture11.png', 'M127', ' ')">
+    <img src="texture/texture12.png" class="texture-option" onclick="setModel(this, 'models/padella12.glb', 'texture/texture12.png', 'A148', ' ')">
+    <img src="texture/texture13.png" class="texture-option" onclick="setModel(this, 'models/padella13.glb', 'texture/texture13.png', 'Texture 13', 'Descrizione')">
+    <img src="texture/texture14.png" class="texture-option" onclick="setModel(this, 'models/padella14.glb', 'texture/texture14.png', 'Texture 14', 'Descrizione')">
+    <img src="texture/texture15.png" class="texture-option" onclick="setModel(this, 'models/padella15.glb', 'texture/texture15.png', 'Texture 15', 'Descrizione')">
+    <img src="texture/texture16.png" class="texture-option" onclick="setModel(this, 'models/padella16.glb', 'texture/texture16.png', 'Texture 16', 'Descrizione')">
+    <img src="texture/texture17.png" class="texture-option" onclick="setModel(this, 'models/padella17.glb', 'texture/texture17.png', 'Texture 17', 'Descrizione')">
+    <img src="texture/texture18.png" class="texture-option" onclick="setModel(this, 'models/padella18.glb', 'texture/texture18.png', 'Texture 18', 'Descrizione')">
+    <img src="texture/texture19.png" class="texture-option" onclick="setModel(this, 'models/padella19.glb', 'texture/texture19.png', 'Texture 19', 'Descrizione')">
+    <img src="texture/texture20.png" class="texture-option" onclick="setModel(this, 'models/padella20.glb', 'texture/texture20.png', 'Texture 20', 'Descrizione')">
+    <img src="texture/texture21.png" class="texture-option" onclick="setModel(this, 'models/padella21.glb', 'texture/texture21.png', 'Texture 21', 'Descrizione')">
+    <img src="texture/texture22.png" class="texture-option" onclick="setModel(this, 'models/padella22.glb', 'texture/texture22.png', 'Texture 22', 'Descrizione')">
+    <img src="texture/texture23.png" class="texture-option" onclick="setModel(this, 'models/padella23.glb', 'texture/texture23.png', 'Texture 23', 'Descrizione')">
+    <img src="texture/texture24.png" class="texture-option" onclick="setModel(this, 'models/padella24.glb', 'texture/texture24.png', 'Texture 24', 'Descrizione')">
+    <img src="texture/texture25.png" class="texture-option" onclick="setModel(this, 'models/padella25.glb', 'texture/texture25.png', 'Texture 25', 'Descrizione')">
+    <img src="texture/texture26.png" class="texture-option" onclick="setModel(this, 'models/padella26.glb', 'texture/texture26.png', 'Texture 26', 'Descrizione')">
+    <img src="texture/texture27.png" class="texture-option" onclick="setModel(this, 'models/padella27.glb', 'texture/texture27.png', 'Texture 27', 'Descrizione')">
+    <img src="texture/texture28.png" class="texture-option" onclick="setModel(this, 'models/padella28.glb', 'texture/texture28.png', 'Texture 28', 'Descrizione')">
+    <img src="texture/texture29.png" class="texture-option" onclick="setModel(this, 'models/padella29.glb', 'texture/texture29.png', 'Texture 29', 'Descrizione')">
+    <img src="texture/texture30.png" class="texture-option" onclick="setModel(this, 'models/padella30.glb', 'texture/texture30.png', 'Texture 30', 'Descrizione')">
+    <img src="texture/texture31.png" class="texture-option" onclick="setModel(this, 'models/padella31.glb', 'texture/texture31.png', 'Texture 31', 'Descrizione')">
+    <img src="texture/texture32.png" class="texture-option" onclick="setModel(this, 'models/padella32.glb', 'texture/texture32.png', 'Texture 32', 'M618')">
+    <img src="texture/texture33.png" class="texture-option" onclick="setModel(this, 'models/padella33.glb', 'texture/texture33.png', 'Texture 33', 'Descrizione')">
+    <img src="texture/texture34.png" class="texture-option" onclick="setModel(this, 'models/padella34.glb', 'texture/texture34.png', 'Texture 34', 'Descrizione')">
+    <img src="texture/texture35.png" class="texture-option" onclick="setModel(this, 'models/padella35.glb', 'texture/texture35.png', 'Texture 35', 'M619')">
+    <img src="texture/texture36.png" class="texture-option" onclick="setModel(this, 'models/padella36.glb', 'texture/texture36.png', 'Texture 36', 'Descrizione')">
+    <img src="texture/texture37.png" class="texture-option" onclick="setModel(this, 'models/padella37.glb', 'texture/texture37.png', 'Texture 37', 'Descrizione')">
+    <img src="texture/texture38.png" class="texture-option" onclick="setModel(this, 'models/padella38.glb', 'texture/texture38.png', 'Texture 38', 'Descrizione')">
+    <img src="texture/texture39.png" class="texture-option" onclick="setModel(this, 'models/padella39.glb', 'texture/texture39.png', 'Texture 39', 'Descrizione')">
+    <img src="texture/texture40.png" class="texture-option" onclick="setModel(this, 'models/padella40.glb', 'texture/texture40.png', 'Texture 40', 'Descrizione')">
+  </div>
+
+  
+
+  <script>
+    function setModel(element, modelSrc, imgSrc, title, desc) {
+      document.getElementById('viewer').src = modelSrc;
+      document.getElementById('preview').src = imgSrc;
+      document.getElementById('texture-title').textContent = title;
+      document.getElementById('texture-desc').textContent = desc;
+
+      document.querySelectorAll('.texture-option').forEach(el => el.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+  </script>
+
+</body>
+</html>
