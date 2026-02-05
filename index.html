@@ -2,9 +2,27 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>DekoKustom - Visualizza anteprima</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>DekoKustom - Customize your product</title>
+  <meta name="description" content="Customize and view DEKO coatings in 3D. Select the sheet metal and observe the effect on the model in real time.">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon32X32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<meta property="og:title" content="DekoKustom – 3D Preview">
+<meta property="og:description" content="Select the sheet metal and observe the effect on the model in real time.">
+<meta property="og:image" content="https://www.dekokustom.com/assets/og-image.jpg">
+<meta property="og:url" content="https://www.dekokustom.com/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DekoKustom – 3D Preview">
+<meta name="twitter:description" content="Select the sheet metal and observe the effect on the model in real time.">
+<meta name="twitter:image" content="https://www.dekokustom.com/og-image.jpg">
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body {
       background: #111;
@@ -95,9 +113,9 @@
   .note-effetto-visivo {
   color: red;
   font-weight: bold;
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
-  margin-top: 300px; 
+  margin-top: 200px; 
   text-transform: uppercase;
 }
 
@@ -129,7 +147,7 @@
     position: absolute;
     top: 12px;
     right: 12px;
-    width: min(42vw, 320px);
+    width: min(22vw, 320px);
     z-index: 5;
     padding: 10px;
     border-radius: 12px;
@@ -145,14 +163,14 @@
   }
 
   .note-effetto-visivo{
-    margin: 6px 0 0;
-    font-size: 26px;
+    margin: 0px 0 0;
+    font-size: 18px;
     text-align: center;
     white-space: nowrap;
   }
 
   .description {
-    font-size: 1.8em;
+    font-size: 1em;
 }
 
   .grid{
